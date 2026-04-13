@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="8" fill="#0d2b4e"/>
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#00b4c8" stroke-width="1.5"/>
+  <text x="16" y="21" font-family="Arial, sans-serif" font-size="11" font-weight="800" fill="#00b4c8" text-anchor="middle" letter-spacing="0.5">ADH</text>
+</svg>

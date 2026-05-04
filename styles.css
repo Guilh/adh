@@ -227,7 +227,7 @@ nav {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 60px;
+  gap: 100px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -335,73 +335,155 @@ nav {
 
 /* Agent card */
 .agent-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 20px;
-  padding: 36px 28px;
-  backdrop-filter: blur(8px);
-  text-align: center;
-}
-
-.qr-wrap {
-  width: 160px;
-  height: 160px;
-  border-radius: 28px;
-  background: var(--teal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px;
-  box-shadow: 0 0 0 6px rgba(0,180,200,.18), 0 8px 28px rgba(0,0,0,.3);
+  position: relative;
+  border-radius: 24px;
+  padding: 36px 30px 30px;
+  background:
+    linear-gradient(160deg, rgba(14,26,48,.92) 0%, rgba(8,17,34,.82) 100%) padding-box,
+    linear-gradient(135deg, rgba(0,212,232,.55), rgba(255,255,255,.12) 42%, rgba(0,180,200,.32)) border-box;
+  border: 1px solid transparent;
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 24px 60px -20px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  isolation: isolate;
   overflow: hidden;
 }
 
-.qr-inner {
-  width: 138px;
-  height: 138px;
-  border-radius: 14px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+.agent-card-glow {
+  position: absolute;
+  inset: -60px -40px auto -40px;
+  height: 240px;
+  z-index: -1;
+  background: radial-gradient(50% 60% at 50% 0%, rgba(0,180,200,.2), transparent 70%);
+  filter: blur(44px);
+  pointer-events: none;
 }
 
-.qr-wrap img {
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
+.agent-card-status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 999px;
+  padding: 6px 10px;
+  backdrop-filter: blur(8px);
+}
+
+.agent-card-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2bd76b;
+  box-shadow: 0 0 8px rgba(43,215,107,.65);
+}
+
+.agent-card-meta {
+  text-align: left;
+  margin: 38px 0 22px;
+}
+
+.agent-card-eyebrow {
   display: block;
-}
-
-.scan-me-label {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   color: var(--teal);
-  margin-bottom: 22px;
+  margin-bottom: 12px;
+}
+
+.agent-card-line {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.2px;
+  color: var(--white);
+  max-width: 290px;
+}
+
+.instabrain-callout {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-.agent-name {
-  font-size: 22px;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(135deg, #00b4c8 0%, #0095a8 100%);
+  color: #fff;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--white);
-  margin-bottom: 4px;
+  letter-spacing: .2px;
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px -8px rgba(0,180,200,.5),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.agent-title {
-  font-size: 13px;
-  color: var(--teal);
-  font-weight: 500;
-  letter-spacing: .4px;
+.instabrain-callout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transition: left .6s ease;
+}
+
+.instabrain-callout:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 40px -8px rgba(0,180,200,.65),
+    inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+.instabrain-callout:hover::before { left: 130%; }
+
+.instabrain-callout-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.instabrain-callout-arrow {
+  transition: transform .25s ease;
+}
+
+.instabrain-callout:hover .instabrain-callout-arrow {
+  transform: translateX(4px);
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0 22px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  color: rgba(255,255,255,.4);
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.08);
 }
 
 .agent-contact-list {
@@ -472,7 +554,33 @@ nav {
 .services {
   padding: 90px 24px;
   background: var(--gray-50);
+  position: relative;
+  overflow: hidden;
 }
+
+.services::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0,180,200,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.services::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0,180,200,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.services > * { position: relative; z-index: 1; }
 
 .section-header {
   text-align: center;
@@ -499,6 +607,12 @@ nav {
   color: var(--navy);
   line-height: 1.2;
   margin-bottom: 14px;
+  letter-spacing: -.4px;
+}
+
+.section-header h2 em {
+  font-style: italic;
+  color: var(--teal);
 }
 
 .section-header p {
@@ -517,17 +631,17 @@ nav {
 .service-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
+  border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  transition: box-shadow .25s, transform .25s, border-color .25s;
+  transition: box-shadow .3s, transform .25s, border-color .25s;
   cursor: default;
 }
 
 .service-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 14px 34px -16px rgba(0,180,200,.28), var(--shadow-md);
   transform: translateY(-4px);
-  border-color: var(--teal);
+  border-color: rgba(0,180,200,.35);
 }
 
 .service-icon {
@@ -540,7 +654,11 @@ nav {
   justify-content: center;
   margin: 0 auto 18px;
   color: var(--teal-dark);
-  transition: background .25s;
+  transition: background .25s, color .25s, transform .25s;
+}
+
+.service-card:hover .service-icon {
+  transform: translateY(-2px);
 }
 
 .service-card:hover .service-icon {

@@ -1,4 +1,3 @@
-// Hamburger toggle
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobile');
 

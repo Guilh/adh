@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="pageTitle">Get in Touch – Angel Hernandez | ADH Insurance Services</title>
+  <meta name="description" content="Contact Angel Hernandez, Licensed Insurance Advisor. Let him know how you prefer to be reached and he'll personally help you find the right plan." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+  <meta property="og:title" content="Get in Touch with Angel Hernandez" />
+  <meta property="og:description" content="Tell Angel how you'd like to be contacted and he'll reach out personally to help you find the right coverage." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adh-insurance.com/enroll/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="page-enroll">
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-badge">ADH</div>
+        <div class="nav-brand">
+          Angel Hernandez
+          <span>ADH Insurance Services</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#why">About</a></li>
+        <li><a href="../index.html#enroll">Contact</a></li>
+        <li><a href="./" class="nav-cta">Enroll Now</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="nav-mobile" id="navMobile">
+      <li><a href="../index.html#services" class="nav-mobile-link">Services</a></li>
+      <li><a href="../index.html#why" class="nav-mobile-link">About</a></li>
+      <li><a href="../index.html#enroll" class="nav-mobile-link">Contact</a></li>
+      <li><a href="./" class="nav-cta">Enroll Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- FORM HERO -->
+  <section class="form-hero">
+    <div class="form-hero-inner">
+
+      <div class="form-lang-switch" role="group" aria-label="Choose language">
+        <button type="button" data-lang="en" class="active">
+          <span class="form-lang-check" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          English
+        </button>
+        <button type="button" data-lang="es">
+          <span class="form-lang-check" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          Español
+        </button>
+      </div>
+
+      <h1>
+        <span data-i18n="title">Hi, this is Angel Hernandez</span>
+      </h1>
+      <p class="form-hero-sub" data-i18n="subtitle">
+        Kindly let me know how you prefer to be contacted, and I'll reach out to you personally.
+      </p>
+      <p class="form-required-note">
+        <span class="req">*</span> <span data-i18n="requiredField">Required field</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section">
+    <div class="form-shell">
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <!-- Honeypot: bots fill it, humans never see it -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="New contact from adh-insurance.com" />
+
+        <fieldset class="form-group">
+          <legend data-i18n="yourName">Your name</legend>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="firstName">
+                <span class="req">*</span> <span data-i18n="preferredName">Preferred name</span>
+              </label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" maxlength="60" />
+            </div>
+            <div class="form-field">
+              <label for="lastName">
+                <span class="req">*</span> <span data-i18n="lastName">Last name</span>
+              </label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" maxlength="60" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend data-i18n="contactMethod">Contact method</legend>
+          <p class="form-help">
+            <span class="req">*</span> <span data-i18n="oneRequired">At least one is required</span>
+          </p>
+          <div class="form-field">
+            <label for="email" data-i18n="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="120" />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="mobilePhone" data-i18n="mobilePhone">Mobile phone</label>
+              <input type="tel" id="mobilePhone" name="mobilePhone" autocomplete="tel-national" inputmode="numeric" maxlength="14" />
+            </div>
+            <div class="form-field">
+              <label for="homePhone" data-i18n="homePhone">Home phone</label>
+              <input type="tel" id="homePhone" name="homePhone" autocomplete="tel-national" inputmode="numeric" maxlength="14" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend data-i18n="anythingElse">Anything else? (optional)</legend>
+          <div class="form-field">
+            <textarea id="message" name="message" rows="4" maxlength="1000" data-i18n-attr="placeholder" data-i18n="messagePlaceholder" placeholder="Coverage you're interested in, questions, timing..."></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-consent" data-i18n="consent">
+          By providing your name and contact information you are consenting to receive calls, text messages, and/or emails from a licensed insurance agent about insurance plans at the number provided, and you agree such calls and/or text messages may use an auto-dialer or robocall, even if you are on a government do-not-call registry. This agreement is not a condition of enrollment. You can revoke your consent at any time.
+        </div>
+
+        <div class="form-error" id="formError" role="alert" hidden></div>
+
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="form-submit-label" data-i18n="submit">Submit</span>
+          <svg class="form-submit-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="form-submit-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="9" stroke-opacity=".25"/><path d="M21 12a9 9 0 00-9-9"/></svg>
+        </button>
+      </form>
+
+      <div id="formSuccess" class="form-success" hidden>
+        <div class="form-success-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 data-i18n="thanks">Thanks — your message is on its way.</h2>
+        <p data-i18n="thanksSub">Angel will reach out personally within one business day.</p>
+        <a href="../index.html" class="btn-outline form-back-home" data-i18n="backHome">Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-badge">ADH</div>
+        <div>
+          <div class="footer-name">
+            Angel Hernandez
+            <span>Licensed Health &amp; Life Insurance Advisor</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#why">About</a>
+        <a href="../index.html#enroll">Contact</a>
+        <a href="tel:4076839674">(407) 683-9674</a>
+        <a href="mailto:ahernandez913@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        © 2026 Angel Hernandez – ADH Insurance Services. Licensed Insurance Agent.<br />
+        Insurance products are offered through licensed carriers. Coverage availability and plan details vary by state and individual eligibility.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../enroll.js"></script>
+
+</body>
+</html>

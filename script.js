@@ -16,13 +16,13 @@ document.querySelectorAll('.nav-mobile-link, .nav-mobile .nav-cta').forEach(link
 
 // Smooth active nav highlighting
 const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navLinks = document.querySelectorAll('.nav-links a[href*="#"]');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href') === '#' + entry.target.id
+        link.style.color = new URL(link.href, window.location.href).hash === '#' + entry.target.id
           ? 'var(--teal)'
           : '';
       });
